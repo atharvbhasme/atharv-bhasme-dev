@@ -3,6 +3,7 @@ import HomeLink from "../components/HomeLink";
 import '../App.css'
 import SVGComponent from "../components/SVGComponent";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "../components/ThemeToggle";
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -18,6 +19,7 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <HomeLink />
+      <ThemeToggle />
       <div className="resume-button-home-page">
         <CustomeButton
           height="40px"
@@ -65,4 +67,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-``;

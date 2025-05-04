@@ -1,4 +1,11 @@
 import SkillCard from "./SkillCard";
+import Web from '../assets/icons/spider-web-web-svgrepo-com.svg';
+import FR from '../assets/icons/react-javascript-js-framework-facebook-svgrepo-com.svg';
+import BE from '../assets/icons/nodejs-icon-svgrepo-com.svg';
+import GQL from '../assets/icons/graphql-svgrepo-com.svg';
+import DB from '../assets/icons/database-svgrepo-com.svg';
+import DC from '../assets/icons/docker2-svgrepo-com.svg';
+import GIT from '../assets/icons/git-svgrepo-com.svg';
 
 interface SkillsList {
   logo: string;
@@ -9,37 +16,37 @@ interface SkillsList {
 const Skills = () => {
   const skillsLists: SkillsList[] = [
     {
-      logo: "src/assets/icons/spider-web-web-svgrepo-com.svg",
+      logo: Web,
       title: "Web Design & Development",
       technologies: ["HTML", "CSS", "JavaScript", "TypeScript"],
     },
     {
-      logo: "src/assets/icons/react-javascript-js-framework-facebook-svgrepo-com.svg",
+      logo: FR,
       title: "Frontend Javascript Framework",
       technologies: ["React", "React-Native", "Nextjs"],
     },
     {
-      logo: "src/assets/icons/nodejs-icon-svgrepo-com.svg",
+      logo: BE,
       title: "Backend Javascript Framework",
       technologies: ["Nodejs", "Fastify", "Nestjs"],
     },
     {
-      logo: "src/assets/icons/graphql-svgrepo-com.svg",
+      logo: GQL,
       title: "API Design",
       technologies: ["REST API", "Graphql"],
     },
     {
-      logo: "src/assets/icons/database-svgrepo-com.svg",
+      logo: DB,
       title: "Database Managment System",
       technologies: ["MongoDB", "SQL", "PostgresSQL"],
     },
     {
-      logo: "src/assets/icons/docker2-svgrepo-com.svg",
+      logo: DC,
       title: "Automation Workflow Tools",
       technologies: ["Docker", "K8S", "CI/CD workflows"],
     },
     {
-      logo: "src/assets/icons/git-svgrepo-com.svg",
+      logo: GIT,
       title: "Version Control Systems",
       technologies: ["git", "github", "azure devops"],
     },

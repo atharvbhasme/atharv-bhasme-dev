@@ -2,6 +2,7 @@ import CustomeButton from "../components/CustomeButton";
 import HomeLink from "../components/HomeLink";
 import HorizontalDivider from "../components/HorizontalDivider";
 import ProjectCard from "../components/ProjectCard";
+import PortfolioImage from '../../src/assets/multimedia.svg'
 
 const Projects = () => {
   return (
@@ -35,10 +36,10 @@ const Projects = () => {
       <HorizontalDivider />
       <div className="project-lists">
         <ProjectCard
-          image="src/assets/multimedia.svg"
+          image={PortfolioImage}
           name="Portfolio Website"
-          description="A personal portfolio to showcase my work and blog."
-          link="https://github.com/username/portfolio"
+          description="A personal portfolio to showcase my work"
+          link="https://github.com/atharvbhasme/atharv-bhasme-dev"
           technologies={["React", "CSS", "TypeScript"]}
         />
       </div>

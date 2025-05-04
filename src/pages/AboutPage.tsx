@@ -5,6 +5,7 @@ import HorizontalDivider from "../components/HorizontalDivider";
 import Experience from "../components/Experience";
 import VerticalDivider from "../components/VerticalDivider";
 import Skills from "../components/Skills";
+import PI from '../assets/circled_profile_image.png';
 
 const AboutPage = () => {
   return (
@@ -14,7 +15,7 @@ const AboutPage = () => {
       <HorizontalDivider />
       <div className="personal-info">
         <img
-          src="src/assets/circled_profile_image.png"
+          src={PI}
           className="profile-img"
           height={335}
           width={335}
