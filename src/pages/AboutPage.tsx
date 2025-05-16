@@ -5,7 +5,7 @@ import HorizontalDivider from "../components/HorizontalDivider";
 import Experience from "../components/Experience";
 import VerticalDivider from "../components/VerticalDivider";
 import Skills from "../components/Skills";
-import PI from '../assets/circled_profile_image.png';
+import PI from '../../public/assets/circled_profile_image.png';
 
 const AboutPage = () => {
   return (

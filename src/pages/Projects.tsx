@@ -2,7 +2,7 @@ import CustomeButton from "../components/CustomeButton";
 import HomeLink from "../components/HomeLink";
 import HorizontalDivider from "../components/HorizontalDivider";
 import ProjectCard from "../components/ProjectCard";
-import PortfolioImage from '../../src/assets/multimedia.svg'
+import PortfolioImage from '../../public/assets/multimedia.svg'
 
 const Projects = () => {
   return (

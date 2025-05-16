@@ -1,11 +1,11 @@
 import SkillCard from "./SkillCard";
-import Web from '../assets/icons/spider-web-web-svgrepo-com.svg';
-import FR from '../assets/icons/react-javascript-js-framework-facebook-svgrepo-com.svg';
-import BE from '../assets/icons/nodejs-icon-svgrepo-com.svg';
-import GQL from '../assets/icons/graphql-svgrepo-com.svg';
-import DB from '../assets/icons/database-svgrepo-com.svg';
-import DC from '../assets/icons/docker2-svgrepo-com.svg';
-import GIT from '../assets/icons/git-svgrepo-com.svg';
+import Web from '../../public/assets/icons/spider-web-web-svgrepo-com.svg';
+import FR from '../../public/assets/icons/react-javascript-js-framework-facebook-svgrepo-com.svg';
+import BE from '../../public/assets/icons/nodejs-icon-svgrepo-com.svg';
+import GQL from '../../public/assets/icons/graphql-svgrepo-com.svg';
+import DB from '../../public/assets/icons/database-svgrepo-com.svg';
+import DC from '../../public/assets/icons/docker2-svgrepo-com.svg';
+import GIT from '../../public/assets/icons/git-svgrepo-com.svg';
 
 interface SkillsList {
   logo: string;
