@@ -1,12 +1,15 @@
 import CustomeButton from "../components/CustomeButton";
 import HomeLink from "../components/HomeLink";
-import '../App.css'
-import SVGComponent from "../components/SVGComponent";
+import '../index.css'
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
+import HomePageSVG from "../components/HomePageSVG";
+import React from "react";
+import HomePageSVGDark from "../components/HomePageSVGDark";
 
 const HomePage = () => {
   const navigate = useNavigate()
+  const [darkTheme, setDarkTheme] = React.useState(false);
 
   const redirectToAboutPage = () => {
     navigate('/about')
@@ -19,8 +22,8 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <HomeLink />
-      <ThemeToggle />
       <div className="resume-button-home-page">
+      <ThemeToggle setDarkTheme={setDarkTheme}/>
         <CustomeButton
           height="40px"
           width="200px"
@@ -60,7 +63,7 @@ const HomePage = () => {
         />
       </div>
       <div className="hero-animation">
-        <SVGComponent />
+        {darkTheme ? <HomePageSVGDark /> : <HomePageSVG />}
       </div>
     </div>
   );
