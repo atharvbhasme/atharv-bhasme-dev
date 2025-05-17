@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "../index.css";
 
 interface SkillCardProps {
   logo: string; // SVG or image URL

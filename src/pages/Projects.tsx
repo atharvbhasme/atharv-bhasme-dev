@@ -3,12 +3,17 @@ import HomeLink from "../components/HomeLink";
 import HorizontalDivider from "../components/HorizontalDivider";
 import ProjectCard from "../components/ProjectCard";
 import PortfolioImage from '../../public/assets/multimedia.svg'
+import React from "react";
+import ThemeToggle from "../components/ThemeToggle";
 
 const Projects = () => {
+  const [ , setDarkTheme] = React.useState(false);
+  
   return (
     <div className="projects-page">
       <HomeLink />
       <div className="resume-button-home-page">
+      <ThemeToggle setDarkTheme={setDarkTheme}/>
         <CustomeButton
           height="40px"
           width="200px"

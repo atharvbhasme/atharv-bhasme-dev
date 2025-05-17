@@ -6,6 +6,7 @@ import GQL from '../../public/assets/icons/graphql-svgrepo-com.svg';
 import DB from '../../public/assets/icons/database-svgrepo-com.svg';
 import DC from '../../public/assets/icons/docker2-svgrepo-com.svg';
 import GIT from '../../public/assets/icons/git-svgrepo-com.svg';
+import Webdark from '../../public/assets/icons/spider-web-web-svgrepo-com-dark.svg';
 
 interface SkillsList {
   logo: string;
@@ -13,10 +14,14 @@ interface SkillsList {
   technologies: string[];
 }
 
-const Skills = () => {
+interface skillsProps {
+  isDarkTheme: boolean
+}
+
+const Skills = ({isDarkTheme}: skillsProps) => {
   const skillsLists: SkillsList[] = [
     {
-      logo: Web,
+      logo: isDarkTheme ? Webdark : Web,
       title: "Web Design & Development",
       technologies: ["HTML", "CSS", "JavaScript", "TypeScript"],
     },

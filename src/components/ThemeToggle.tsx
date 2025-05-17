@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
+import SUN from '../../public/assets/icons/sun-svgrepo-com.svg';
+import MOON from '../../public/assets/icons/moon-svgrepo-com.svg';
 
-const ThemeToggle = () => {
+interface ThemeToggleProps {
+  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ThemeToggle = ({ setDarkTheme }: ThemeToggleProps) => {
   const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark');
 
   useEffect(() => {
@@ -8,29 +14,24 @@ const ThemeToggle = () => {
     if (dark) {
       body.classList.add('dark');
       localStorage.setItem('theme', 'dark');
+      setDarkTheme(true);
     } else {
       body.classList.remove('dark');
       localStorage.setItem('theme', 'light');
+      setDarkTheme(false);
     }
   }, [dark]);
 
   return (
     <button
       onClick={() => setDark(prev => !prev)}
-      style={{
-        position: 'fixed',
-        top: '1rem',
-        right: '1rem',
-        padding: '0.5rem 1rem',
-        borderRadius: '6px',
-        backgroundColor: 'var(--card-bg)',
-        color: 'var(--text-color)',
-        border: '1px solid var(--border-color)',
-        cursor: 'pointer',
-        transition: 'all 0.3s ease',
-      }}
+      className="theme-toggle-button"
     >
-      {dark ? '🌙 Dark' : '☀️ Light'}
+      <img
+        src={dark ? MOON : SUN}
+        className="theme-icon"
+        alt={dark ? 'Moon Icon' : 'Sun Icon'}
+      />
     </button>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import '../App.css'
+import '../index.css'
 
 interface ProjectCardProps {
   image: string;
@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div className="project-card">
       <img src={image} alt={name} className="project-image" />
       <div className="project-content">
-        <h3>{name}</h3>
+        <h3 className="project-card-header">{name}</h3>
         <p className="project-description">{description}</p>
         <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
           View Project
