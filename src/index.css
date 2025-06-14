@@ -1,5 +1,5 @@
 :root {
-  --font-primary: 'Inter', sans-serif;
+  --font-primary: 'Poppins', sans-serif;
   --color-bg-light: #f9f9f9;
   --color-text-light: #1a1a1a;
   --color-primary: #0f62fe;
@@ -14,6 +14,17 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+.tiro-devanagari-marathi-regular {
+  font-family: "Tiro Devanagari Marathi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tiro-devanagari-marathi-regular-italic {
+  font-family: "Tiro Devanagari Marathi", serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 body {
@@ -52,7 +63,7 @@ h1 {
   font-size: 2rem;
   font-weight: 700;
   position: absolute;
-  top: 4%;
+  top: 5%;
   left: 5%;
 }
 
@@ -80,6 +91,35 @@ h1 {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.hero-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.animated-text {
+  font-weight: 600;
+  color: var(--highlight-color, #4e5ed3); /* Customize */
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: var(--text-color);
+  margin-left: 4px;
+  height: 1.2em;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-animation {
@@ -291,11 +331,15 @@ h1 {
 
 /* Theme toggle component */
 .theme-toggle-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   background-color: var(--card-bg);
   color: var(--text-color);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--text-color);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -324,4 +368,133 @@ h1 {
     transform: rotate(360deg);
     opacity: 1;
   }
+}
+
+/* -----------------------
+   Responsive Styles
+-------------------------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  :root {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .home-link {
+    font-size: 1.2rem;
+    top: 2%;
+    left: 3%;
+    position: static;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .resume-button-home-page {
+    position: static;
+    top: auto;
+    right: auto;
+    margin-bottom: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .Hero-text-home-page {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 1rem 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .hero-animation {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: 1rem 0;
+  }
+
+  .button-group {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .personal-info,
+  .half-about-page {
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+    align-items: center;
+  }
+
+  .experience-block,
+  .skills-block {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .skill-card {
+    max-width: 100%;
+    margin: 0.5rem 0;
+    flex-direction: row;
+    padding: 10px 8px;
+  }
+
+  .skill-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .ui-timeline,
+  .li-timeline {
+    padding-left: 10px;
+    margin-left: 0;
+  }
+
+  .project-card {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .project-image {
+    height: 140px;
+  }
+
+  .project-content {
+    padding: 10px;
+  }
+
+  .tech-list {
+    gap: 4px;
+  }
+
+  .theme-toggle-button {
+    display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .skill-card:hover {
+  animation: shake 0.3s ease-in-out;
+}
+ 
 }

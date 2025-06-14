@@ -3,35 +3,49 @@ import SUN from '../../public/assets/icons/sun-svgrepo-com.svg';
 import MOON from '../../public/assets/icons/moon-svgrepo-com.svg';
 
 interface ThemeToggleProps {
-  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
+  setDarkTheme: (isDark: boolean) => void;
 }
 
 const ThemeToggle = ({ setDarkTheme }: ThemeToggleProps) => {
-  const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark');
+  const [dark, setDark] = useState(() => {
+    try {
+      return localStorage.getItem('theme') === 'dark';
+    } catch (e) {
+      return false; // Fallback if localStorage is blocked
+    }
+  });
 
   useEffect(() => {
     const body = document.body;
     if (dark) {
       body.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
       setDarkTheme(true);
     } else {
       body.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
       setDarkTheme(false);
     }
-  }, [dark]);
+
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    } catch (e) {
+      console.warn('Failed to save theme preference:', e);
+    }
+  }, [dark, setDarkTheme]);
 
   return (
     <button
       onClick={() => setDark(prev => !prev)}
       className="theme-toggle-button"
+      aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+      aria-pressed={dark}
     >
       <img
         src={dark ? MOON : SUN}
         className="theme-icon"
-        alt={dark ? 'Moon Icon' : 'Sun Icon'}
+        alt=""
+        aria-hidden="true" // Since we have text label
       />
+      <p className="theme-text">{dark ? 'Dark Theme' : 'Light Theme'}</p>
     </button>
   );
 };
