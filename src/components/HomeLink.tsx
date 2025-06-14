@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../App.css'
+import '../index.css'
 
 const HomeLink = () => {
     return(<Link to={'/'} className="home-link">Home</Link>)

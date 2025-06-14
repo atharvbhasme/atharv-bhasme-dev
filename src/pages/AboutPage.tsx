@@ -1,16 +1,23 @@
 import CustomeButton from "../components/CustomeButton";
 import HomeLink from "../components/HomeLink";
-import '../App.css'
+import '../index.css'
 import HorizontalDivider from "../components/HorizontalDivider";
 import Experience from "../components/Experience";
 import VerticalDivider from "../components/VerticalDivider";
 import Skills from "../components/Skills";
 import PI from '../../public/assets/circled_profile_image.png';
+import ThemeToggle from "../components/ThemeToggle";
+import React from "react";
 
 const AboutPage = () => {
+   const [darkTheme, setDarkTheme] = React.useState(false);
+
   return (
     <div className="about-page">
       <HomeLink />
+      <div className="resume-button-home-page">
+      <ThemeToggle setDarkTheme={setDarkTheme}/>
+      </div>
       <h1>About</h1>
       <HorizontalDivider />
       <div className="personal-info">
@@ -42,7 +49,7 @@ const AboutPage = () => {
       <div className="half-about-page">
         <Experience />
         <VerticalDivider />
-        <Skills />
+        <Skills isDarkTheme={darkTheme}/>
       </div>
     </div>
   );

@@ -1,26 +1,34 @@
 import CustomeButton from "../components/CustomeButton";
 import HomeLink from "../components/HomeLink";
-import '../App.css'
-import SVGComponent from "../components/SVGComponent";
+import "../index.css";
+import "../fonts.css";
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
+import HomePageSVG from "../components/HomePageSVG";
+import React from "react";
+import HomePageSVGDark from "../components/HomePageSVGDark";
+import useScreenSize from "../hooks/useScreenSize";
+import HeroText from "../components/HeroText";
 
 const HomePage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [darkTheme, setDarkTheme] = React.useState(false);
 
   const redirectToAboutPage = () => {
-    navigate('/about')
-  }
+    navigate("/about");
+  };
 
   const redirectToProjects = () => {
-    navigate('/projects')
-  }
+    navigate("/projects");
+  };
+
+  const screenSize = useScreenSize();
 
   return (
     <div className="home-page">
       <HomeLink />
-      <ThemeToggle />
       <div className="resume-button-home-page">
+        <ThemeToggle setDarkTheme={setDarkTheme} />
         <CustomeButton
           height="40px"
           width="200px"
@@ -30,11 +38,12 @@ const HomePage = () => {
           onClick={() => console.log("Downloading...")}
         />
       </div>
-      <div className="Hero-text-home-page">
+      {/* <div className="Hero-text-home-page">
         <h1 className="hero-heading">HI, I AM ATHARV BHASME</h1>
-      </div>
+      </div> */}
+      <HeroText />
       <div className="button-group">
-      <CustomeButton
+        <CustomeButton
           height="40px"
           width="200px"
           textColor="#000"
@@ -60,7 +69,11 @@ const HomePage = () => {
         />
       </div>
       <div className="hero-animation">
-        <SVGComponent />
+        {darkTheme ? (
+          <HomePageSVGDark screenSize={screenSize} />
+        ) : (
+          <HomePageSVG screenSize={screenSize} />
+        )}
       </div>
     </div>
   );
