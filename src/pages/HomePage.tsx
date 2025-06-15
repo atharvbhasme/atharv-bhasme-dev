@@ -55,7 +55,7 @@ const HomePage = () => {
           onClick={() => console.log("Downloading...")}
         />}
       </div>
-      <div className="home-line"></div>
+      {!isMobile && <div className="home-line"></div>}
       <HeroText phrases={isEng ? englishPhrases: marathiPhrases} isEng={isEng}/>
       <div className="button-group">
         <CustomeButton

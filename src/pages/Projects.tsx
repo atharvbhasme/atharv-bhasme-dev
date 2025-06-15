@@ -71,7 +71,7 @@ const Projects = () => {
       <div className="project-desc">
         <p className="info">
          { isEng ? ` Here are some projects I've developed. If you'd like, we can build
-          something0 similar for you.` : 'मी काही प्रोजेक्ट्स बनवले आहेत. तुम्हाला हवे असेल तर, आम्ही तुमच्यासाठीही असेच काहीतरी बनवू शकतो.'}
+          something similar for you.` : 'मी काही प्रोजेक्ट्स बनवले आहेत. तुम्हाला हवे असेल तर, आम्ही तुमच्यासाठीही असेच काहीतरी बनवू शकतो.'}
         </p>
         <CustomeButton
           height="40px"
