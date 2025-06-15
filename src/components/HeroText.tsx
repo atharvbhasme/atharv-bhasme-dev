@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-const HeroText = () => {
-  const phrases = [
-    'ATHARV BHASME',
-    'Full Stack Developer',
-    'Software Engineer',
-  ];
+interface heroTextProps {
+  phrases: string[];
+  isEng: boolean
+}
+
+const HeroText = ({phrases, isEng}: heroTextProps) => {
 
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
@@ -35,7 +35,7 @@ const HeroText = () => {
   return (
     <div className="Hero-text-home-page">
       <h1 className="hero-heading">
-        HI, I AM <span className="animated-text">{text}</span><span className="cursor">|</span>
+        {isEng ? 'HI, I AM': 'नमस्कार, मी'} <span className="animated-text">{text}</span><span className="cursor">|</span>
       </h1>
     </div>
   );

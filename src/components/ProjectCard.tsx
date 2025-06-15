@@ -7,6 +7,7 @@ interface ProjectCardProps {
   description: string;
   link: string;
   technologies: string[];
+  isEng: boolean
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,6 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   link,
   technologies,
+  isEng
 }) => {
   return (
     <div className="project-card">
@@ -23,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h3 className="project-card-header">{name}</h3>
         <p className="project-description">{description}</p>
         <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
-          View Project
+          {isEng ? 'View Project':'प्रकल्प पहा'}
         </a>
         <div className="tech-list">
           {technologies.map((tech, index) => (
