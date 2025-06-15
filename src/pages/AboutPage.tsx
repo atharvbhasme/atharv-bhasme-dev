@@ -8,17 +8,20 @@ import Skills from "../components/Skills";
 import PI from '../../public/assets/circled_profile_image.png';
 import ThemeToggle from "../components/ThemeToggle";
 import React from "react";
+import LanToggle from "../components/LanToggle";
 
 const AboutPage = () => {
    const [darkTheme, setDarkTheme] = React.useState(false);
+   const [isEng, setIsEng] = React.useState(true);
 
   return (
     <div className="about-page">
-      <HomeLink />
+      <HomeLink isEng={isEng}/>
       <div className="resume-button-home-page">
-      <ThemeToggle setDarkTheme={setDarkTheme}/>
+      <ThemeToggle setDarkTheme={setDarkTheme} isEng={isEng}/>
+      <LanToggle setIsEng={setIsEng} isDark={darkTheme}/>
       </div>
-      <h1>About</h1>
+      <h1>{isEng ? 'About' : 'माझ्याविषयी'}</h1>
       <HorizontalDivider />
       <div className="personal-info">
         <img
@@ -28,12 +31,11 @@ const AboutPage = () => {
           width={335}
         />
         <div className="text-button">
-          <p className="info">
-            I'm a passionate Full-Stack Developer who loves building dynamic,
+          <p className="info">{isEng ? ` I'm a passionate Full-Stack Developer who loves building dynamic,
             user-friendly applications. I thrive on solving problems, creating
             seamless experiences, and continuously expanding my skills. Always
             eager to learn and grow, I'm currently looking for new opportunities
-            to contribute and innovate.
+            to contribute and innovate.`: `मी एक फुल-स्टॅक डेव्हलपर आहे, ज्याला चांगली आणि वापरायला सोपी ॲप्स (ॲप्लिकेशन्स) बनवायला खूप आवडतात. मला समस्या सोडवण्यात, काम व्यवस्थित करण्यात आणि रोज काहीतरी नवीन शिकण्यात मजा येते. मी आता अशा नवीन कामाच्या शोधात आहे, जिथे मला काहीतरी चांगलं करायला मिळेल आणि नवीन गोष्टी शिकायला मिळतील.`}
           </p>
           <CustomeButton
             height="40px"
@@ -47,9 +49,9 @@ const AboutPage = () => {
       </div>
       <HorizontalDivider />
       <div className="half-about-page">
-        <Experience />
+        <Experience isEng={isEng}/>
         <VerticalDivider />
-        <Skills isDarkTheme={darkTheme}/>
+        <Skills isDarkTheme={darkTheme} isEng={isEng}/>
       </div>
     </div>
   );

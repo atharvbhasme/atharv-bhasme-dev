@@ -78,7 +78,7 @@ h1 {
 }
 
 .resume-button-home-page {
-  position: fixed;
+  position: absolute;
   top: 3%;
   right: 5%;
   display: flex;
@@ -140,6 +140,15 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.home-line{
+  border-top: 1px solid lightgrey;
+  position: fixed;
+  top: 12%;
+  left: 3rem;
+  width: calc(100% - 6rem);
+  z-index: 10;
 }
 
 /* About Page */
@@ -370,6 +379,21 @@ h1 {
   }
 }
 
+/* Lan toggle style */
+.lan-toggle-button{
+     display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
 /* -----------------------
    Responsive Styles
 -------------------------- */
@@ -390,11 +414,12 @@ h1 {
 
   .home-link {
     font-size: 1.2rem;
-    top: 2%;
+    top: 3%;
     left: 3%;
     position: static;
     display: block;
     margin-bottom: 1rem;
+    margin-top: 0.6rem;
   }
 
   .resume-button-home-page {
@@ -422,6 +447,15 @@ h1 {
     transform: none;
     margin: 1rem 0;
   }
+
+  .home-line{
+  border-top: 1px solid lightgrey;
+  position: absolute;
+  top: 15%;
+  left: 2rem;
+  width: calc(100% - 4rem);
+  z-index: 10;
+}
 
   .button-group {
     position: static;
@@ -484,6 +518,17 @@ h1 {
 
   .theme-toggle-button {
     display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .lan-toggle-button{
+     display: flex;
    flex-direction: row;
    align-items: center;
    gap: 0.5rem;

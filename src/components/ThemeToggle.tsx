@@ -4,9 +4,10 @@ import MOON from '../../public/assets/icons/moon-svgrepo-com.svg';
 
 interface ThemeToggleProps {
   setDarkTheme: (isDark: boolean) => void;
+  isEng: boolean
 }
 
-const ThemeToggle = ({ setDarkTheme }: ThemeToggleProps) => {
+const ThemeToggle = ({ setDarkTheme, isEng }: ThemeToggleProps) => {
   const [dark, setDark] = useState(() => {
     try {
       return localStorage.getItem('theme') === 'dark';
@@ -45,7 +46,7 @@ const ThemeToggle = ({ setDarkTheme }: ThemeToggleProps) => {
         alt=""
         aria-hidden="true" // Since we have text label
       />
-      <p className="theme-text">{dark ? 'Dark Theme' : 'Light Theme'}</p>
+      <p className="theme-text">{isEng ? (dark ? 'Dark Theme' : 'Light Theme'): (dark ? 'गडद शैली': 'प्रकाश शैली')}</p>
     </button>
   );
 };
