@@ -1,5 +1,5 @@
 export const onDownload = () => {
-    fetch("public/Atharv_Bhasme_Resume.pdf") // public folder path
+    fetch("/Atharv_Bhasme_Resume.pdf") // public folder path
         .then((response) => {
             if (!response.ok) {
                 throw new Error("Network response was not ok");
