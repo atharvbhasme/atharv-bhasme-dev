@@ -44,12 +44,12 @@ const LanToggle = ({ setIsEng, isDark }: lanToggleProps) => {
       aria-pressed={isEng}
     >
       <img
-        src={isDark ? (isEng ? ewhite : mwhite) : isEng ? elogo : mlogo}
+        src={isDark ? (isEng ? mwhite : ewhite) : isEng ? mlogo: elogo}
         alt=""
         aria-hidden="true"
         className="theme-icon"
       />
-      <p className="theme-text">{isEng ? "English" : "मराठी"}</p>
+      <p className="theme-text">{isEng ? "मराठी" : "English"}</p>
     </button>
   );
 };

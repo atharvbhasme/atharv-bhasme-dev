@@ -9,6 +9,7 @@ import PI from '../../public/assets/circled_profile_image.png';
 import ThemeToggle from "../components/ThemeToggle";
 import React from "react";
 import LanToggle from "../components/LanToggle";
+import { onDownload } from "../utils/donwloadResume";
 
 const AboutPage = () => {
    const [darkTheme, setDarkTheme] = React.useState(false);
@@ -43,7 +44,7 @@ const AboutPage = () => {
             textColor="#000"
             color="#fff"
             text="Download Resume"
-            onClick={() => console.log("Downloading...")}
+            onClick={onDownload}
           />
         </div>
       </div>

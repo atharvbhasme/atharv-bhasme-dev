@@ -10,6 +10,7 @@ import HomePageSVGDark from "../components/HomePageSVGDark";
 import useScreenSize from "../hooks/useScreenSize";
 import HeroText from "../components/HeroText";
 import LanToggle from "../components/LanToggle";
+import { onDownload } from "../utils/donwloadResume";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const HomePage = () => {
           textColor="#000"
           color="#fff"
           text={isEng ? "Download Resume" : 'बायोडेटा मिळवा'}
-          onClick={() => console.log("Downloading...")}
+          onClick={onDownload}
         />}
       </div>
       {!isMobile && <div className="home-line"></div>}
@@ -88,7 +89,7 @@ const HomePage = () => {
           textColor="#000"
           color="#fff"
           text={isEng ? "Download Resume" : 'बायोडेटा मिळवा'}
-          onClick={() => console.log("Downloading...")}
+          onClick={onDownload}
         />}
       </div>
       <div className="hero-animation">

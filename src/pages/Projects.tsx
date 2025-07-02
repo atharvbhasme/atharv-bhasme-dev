@@ -7,6 +7,7 @@ import React from "react";
 import ThemeToggle from "../components/ThemeToggle";
 import useScreenSize from "../hooks/useScreenSize";
 import LanToggle from "../components/LanToggle";
+import { onDownload } from "../utils/donwloadResume";
 
 interface projectType {
   image: string;
@@ -63,7 +64,7 @@ const Projects = () => {
             textColor="#000"
             color="#fff"
             text={isEng ? "Download Resume" : 'बायोडेटा मिळवा'}
-            onClick={() => console.log("Downloading...")}
+            onClick={onDownload}
           />
         )}
       </div>
