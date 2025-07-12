@@ -8,6 +8,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import useScreenSize from "../hooks/useScreenSize";
 import LanToggle from "../components/LanToggle";
 import { onDownload } from "../utils/donwloadResume";
+import { useLanguage } from "../context/LanguageContext";
 
 interface projectType {
   image: string;
@@ -19,7 +20,7 @@ interface projectType {
 
 const Projects = () => {
   const [darkTheme, setDarkTheme] = React.useState(false);
-  const [isEng, setIsEng] = React.useState(true);
+  const { isEng }  = useLanguage();
 
   const projectsEnglish: projectType[] = [
     {
@@ -56,7 +57,7 @@ const Projects = () => {
       <HomeLink isEng={isEng}/>
       <div className="resume-button-home-page">
         <ThemeToggle setDarkTheme={setDarkTheme} isEng={isEng}/>
-        <LanToggle setIsEng={setIsEng} isDark={darkTheme} />
+        <LanToggle isDark={darkTheme} />
         {!isMobile && (
           <CustomeButton
             height="40px"

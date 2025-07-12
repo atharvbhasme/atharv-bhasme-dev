@@ -10,17 +10,19 @@ import ThemeToggle from "../components/ThemeToggle";
 import React from "react";
 import LanToggle from "../components/LanToggle";
 import { onDownload } from "../utils/donwloadResume";
+import { useLanguage } from "../context/LanguageContext";
+
 
 const AboutPage = () => {
    const [darkTheme, setDarkTheme] = React.useState(false);
-   const [isEng, setIsEng] = React.useState(true);
+   const { isEng }  = useLanguage();
 
   return (
     <div className="about-page">
       <HomeLink isEng={isEng}/>
       <div className="resume-button-home-page">
       <ThemeToggle setDarkTheme={setDarkTheme} isEng={isEng}/>
-      <LanToggle setIsEng={setIsEng} isDark={darkTheme}/>
+      <LanToggle isDark={darkTheme}/>
       </div>
       <h1>{isEng ? 'About' : 'माझ्याविषयी'}</h1>
       <HorizontalDivider />

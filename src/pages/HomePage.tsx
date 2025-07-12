@@ -11,11 +11,12 @@ import useScreenSize from "../hooks/useScreenSize";
 import HeroText from "../components/HeroText";
 import LanToggle from "../components/LanToggle";
 import { onDownload } from "../utils/donwloadResume";
+import { useLanguage } from "../context/LanguageContext";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [darkTheme, setDarkTheme] = React.useState(false);
-  const [isEng, setIsEng] = React.useState(true);
+  const { isEng }  = useLanguage();
 
   const redirectToAboutPage = () => {
     navigate("/about");
@@ -46,7 +47,7 @@ const HomePage = () => {
       <HomeLink isEng={isEng}/>
       <div className="resume-button-home-page">
         <ThemeToggle setDarkTheme={setDarkTheme} isEng={isEng}/>
-        <LanToggle setIsEng={setIsEng} isDark={darkTheme}/>
+        <LanToggle isDark={darkTheme}/>
        {!isMobile && <CustomeButton
           height="40px"
           width="200px"
